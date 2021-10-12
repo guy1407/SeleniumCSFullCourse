@@ -3,18 +3,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using OpenQA.Selenium;
+
 
 namespace SeleniumCSTutorials
 {
    [TestFixture]
-   public class TestClass
+   public class TestClass : SeleniumCSTutorials.BaseClass.BaseTest
    {
+
+      #region Test methods
+
       [Test]
-      public void TestMethod()
+      public void TestMethod1()
       {
-         // TODO: Add your test code here
-         var answer = 42;
-         Assert.That(answer, Is.EqualTo(42), "Some useful error message");
+
+         IWebElement txtEmailAddress = gobjWebDriver.FindElement(By.XPath(".//*[@id='email']"));
+
+         txtEmailAddress.Clear();
+
+         txtEmailAddress.SendKeys("Some value");
+
       }
+
+      [Test]
+      public void TestMethod2()
+      {
+
+         IWebElement txtEmailAddress = gobjWebDriver.FindElement(By.XPath(".//*[@id='email']"));
+
+         txtEmailAddress.Clear();
+
+         txtEmailAddress.SendKeys("Some value");
+
+      }
+
+      [Test]
+      public void TestMethod3()
+      {
+
+         IWebElement txtEmailAddress = gobjWebDriver.FindElement(By.XPath(".//*[@id='email']"));
+
+         txtEmailAddress.Clear();
+
+         txtEmailAddress.SendKeys("Some value");
+
+      }
+
+      #endregion
+
    }
 }
